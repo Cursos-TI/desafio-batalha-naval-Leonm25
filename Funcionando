@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    // Tabuleiro 5x5 (pode ser qualquer tamanho simples)
+    int tabuleiro[5][5] = {0};
+
+    // Navio vertical (tamanho 3)
+    int navioV[3][2] = {
+        {1, 2},
+        {2, 2},
+        {3, 2}
+    };
+
+    // Navio horizontal (tamanho 3)
+    int navioH[3][2] = {
+        {0, 0},
+        {0, 1},
+        {0, 2}
+    };
+
+    // Marcando navio vertical no tabuleiro
+    for(int i = 0; i < 3; i++) {
+        int x = navioV[i][0];
+        int y = navioV[i][1];
+        tabuleiro[x][y] = 3;
+    }
+
+    // Marcando navio horizontal no tabuleiro
+    for(int i = 0; i < 3; i++) {
+        int x = navioH[i][0];
+        int y = navioH[i][1];
+        tabuleiro[x][y] = 3;
+    }
+
+    // Exibindo coordenadas dos navios
+    printf("Navio Vertical:\n");
+    for(int i = 0; i < 3; i++) {
+        printf("(%d, %d)\n", navioV[i][0], navioV[i][1]);
+    }
+
+    printf("\nNavio Horizontal:\n");
+    for(int i = 0; i < 3; i++) {
+        printf("(%d, %d)\n", navioH[i][0], navioH[i][1]);
+    }
+
+    return 0;
+}
